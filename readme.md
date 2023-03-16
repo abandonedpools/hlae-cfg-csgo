@@ -4,11 +4,13 @@ this is my config for recording csgo demos with HLAE. it is made to be quick and
 # requirements
 - [HLAE (with FFMPEG)](https://github.com/advancedfx/advancedfx/releases)
 
+use the installer and tick the checkbox that says "reinstall FFMPEG"
+
 # how to use
 ## basic instructions
 
 1. download adam.cfg from the [releases](https://github.com/abandonedpools/hlae-cfg/releases) tab
-2. place adam.cfg in your config folder (steamapps/Counter-Strike: Global Offensive/csgo/cfg)
+2. place adam.cfg in your config folder (steamapps/common/Counter-Strike Global Offensive/csgo/cfg)
 2. launch csgo with HLAE
 2. open the demo and type "exec adam" in console
 3. go to the round/tick you want to record and press "o" on your keyboard to start recording (you can change this bind in the cfg file)
@@ -16,7 +18,7 @@ this is my config for recording csgo demos with HLAE. it is made to be quick and
 
 you should execute the config every time you launch a demo or else some commands will not work
 
-by default the recordings will be saved in a folder named "untitled_rec" in your Counter-Strike: Global Offensive folder.
+by default the recordings will be saved in a folder named "untitled_rec" in your Counter-Strike Global Offensive folder.
 
 if you do not see an mp4 file or encounter other issues please refer to the bottom of this page.
 
@@ -50,19 +52,23 @@ these commands are already in the cfg file but are disabled by default, to enabl
 | line | command(s) | description |
 | --- | --- | --- |
 | 35 | demo_index 1 | makes navigation inside of demos less laggy, disabled by default because it can sometimes cause bugs |
-| 37 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
-| 39 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and flashbang icons from the killfeed |
-| 41 | mirv_streams record name " " | custom recording path |
-| 43 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
+| 37 | mp_display_kill_assists 0 | removes assists from killfeed (needs to be executed every time a demo is opened) |
+| 39 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
+| 41 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and flashbang icons from the killfeed |
+| 43 | mirv_streams record name " " | custom recording path |
+| 54 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
 
 # troubleshooting
 ## no video file
-if you do not see a video file, make sure you ticked the "install ffmpeg" checkbox when installing hlae. you must use the installer, not the portable zip.
+if you do not see a video file, make sure you ticked the "reinstall FFMPEG" checkbox when installing HLAE. you must use the installer, not the portable zip.
 
 ## error when launching HLAE
-if you get an error like this when launching it means your HLAE is out of date.
+if you get an error like this when launching it means your HLAE is either out of date or a game update broke certain HLAE features. note that if you just click OK the game *might* still launch and you *might* still be able to record demos if none of the features used here are affected.
 
-![Problem in C:\source\advancedffx\AfxHookSource\adresses.cpp:289](https://media.discordapp.net/attachments/893330030770405437/1085619085372563537/unknown.png?width=360&height=137)
+![Error box with text: "Problem in C:\source\advancedffx\AfxHookSource\adresses.cpp:289"](https://media.discordapp.net/attachments/893330030770405437/1085619085372563537/unknown.png?width=360&height=137)
+
+## error messages when executing the cfg
+if you see error messages in the console after executing the config, such as `AFXERROR: There is no recording setting named blur.` or `Error: invalid streamName.`, dont be worried they are normal and don't affect anything.
 
 ## other issues
 if your issue isn't listed here you can create an issue in the [issues](https://github.com/abandonedpools/hlae-cfg/issues) tab, or politely ask for help in [my discord](https://discord.gg/ATHaaNuxwU) or the [hlae discord](https://discord.gg/NGp8qhN)
