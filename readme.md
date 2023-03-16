@@ -1,5 +1,3 @@
-<base target="_blank">
-
 # overview
 this is my config for recording csgo demos with HLAE. it is made to be quick and easy to use, with plenty of customization options.
 
@@ -15,8 +13,8 @@ use the installer and tick the checkbox that says "reinstall FFMPEG"
 2. place adam.cfg in your config folder (steamapps/common/Counter-Strike Global Offensive/csgo/cfg)
 2. launch csgo with HLAE
 2. open the demo and type "exec adam" in console
-3. go to the round/tick you want to record and press "o" on your keyboard to start recording (you can change this bind in the cfg file)
-4. once you are done, press "o" again to stop recording
+3. go to the round/tick you want to record and press <kbd>o</kbd> on your keyboard to start recording (you can change this bind in the cfg file)
+4. once you are done, press <kbd>o</kbd> again to stop recording
 
 you should execute the config every time you launch a demo or else some commands will not work
 
@@ -46,7 +44,7 @@ aliases you can type in console to quickly execute/toggle commands.
 | 7 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
 | 23 | -crf | 1 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
 | 28 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate edits |
-| 29 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has so if you double this setting you also need to double the blur setting above |
+| 29 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has. (e.g. 60 fps 1 exposure = 120 fps 2 exposure = 240 fps 4 exposure... etc.) |
 
 ## optional commands
 these commands are already in the cfg file but are disabled by default, to enable them remove the "// " in front of them.
@@ -69,7 +67,7 @@ if you get an error like this when launching it means your HLAE is either out of
 
 ![Error box with text: "Problem in C:\source\advancedffx\AfxHookSource\adresses.cpp:289"](https://media.discordapp.net/attachments/893330030770405437/1085619085372563537/unknown.png?width=360&height=137)
 
-## error messages when executing the cfg
+## error messages when executing the config
 if you see error messages in the console after executing the config, such as `AFXERROR: There is no recording setting named blur.` or `Error: invalid streamName.`, dont be worried they are normal and don't affect anything.
 
 ## other issues
