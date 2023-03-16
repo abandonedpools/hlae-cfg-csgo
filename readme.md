@@ -2,14 +2,14 @@
 this is my config for recording csgo demos with HLAE. it is made to be quick and easy to use, with plenty of customization options.
 
 # requirements
-- [HLAE (with FFMPEG)](https://github.com/advancedfx/advancedfx/releases)
+- <a target="_blank" href="https://github.com/advancedfx/advancedfx/releases">HLAE (with FFMPEG)</a>
 
 use the installer and tick the checkbox that says "reinstall FFMPEG"
 
 # how to use
 ## basic instructions
 
-1. download adam.cfg from the [releases](https://github.com/abandonedpools/hlae-cfg/releases) tab
+1. download adam.cfg from the <a target="_blank" href="https://github.com/abandonedpools/hlae-cfg/releases">releases</a> tab
 2. place adam.cfg in your config folder (steamapps/common/Counter-Strike Global Offensive/csgo/cfg)
 2. launch csgo with HLAE
 2. open the demo and type "exec adam" in console
@@ -42,7 +42,7 @@ aliases you can type in console to quickly execute/toggle commands.
 | line | command | default value | description |
 | --- | --- | --- | --- |
 | 7 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
-| 23 | -crf | 1 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
+| 23 | -crf | 1 | video quality (<a target="_blank" href="https://trac.ffmpeg.org/wiki/Encode/H.264#crf">what is crf?</a>) |
 | 28 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate edits |
 | 29 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has so if you double this setting you also need to double the blur setting above |
 
@@ -71,4 +71,7 @@ if you get an error like this when launching it means your HLAE is either out of
 if you see error messages in the console after executing the config, such as `AFXERROR: There is no recording setting named blur.` or `Error: invalid streamName.`, dont be worried they are normal and don't affect anything.
 
 ## other issues
-if your issue isn't listed here you can create an issue in the [issues](https://github.com/abandonedpools/hlae-cfg/issues) tab, or politely ask for help in [my discord](https://discord.gg/ATHaaNuxwU) or the [hlae discord](https://discord.gg/NGp8qhN)
+if your issue isn't listed here you can create an issue in the <a target="_blank" href="https://github.com/abandonedpools/hlae-cfg/issues">issues</a> tab, or politely ask for help in <a target="_blank" href="https://discord.gg/ATHaaNuxwU">my discord</a> or the <a target="_blank" href="https://discord.gg/NGp8qhN">hlae discord</a>
+
+
+
