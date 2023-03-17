@@ -16,11 +16,11 @@ use the installer and tick the checkbox that says "reinstall FFMPEG"
 3. go to the round/tick you want to record and press <kbd>o</kbd> on your keyboard to start recording (you can change this bind in the cfg file)
 4. once you are done, press <kbd>o</kbd> again to stop recording
 
-you should execute the config every time you launch a demo or else some commands will not work
+you should execute the config every time you launch a demo or else some commands will not be executed properly (delag and such)
 
 by default the recordings will be saved in a folder named "untitled_rec" in your Counter-Strike Global Offensive folder.
 
-if you do not see an mp4 file or encounter other issues please refer to the bottom of this page.
+if you do not see an mp4 file or encounter other issues please refer to the [bottom of this page](#no-video-file).
 
 ## simple command shortcuts
 aliases you can type in console to quickly execute/toggle commands.
@@ -38,6 +38,10 @@ aliases you can type in console to quickly execute/toggle commands.
 | hud | toggles cl_draw_only_deathnotices (0/1) |toggle the hud off/on (minus the crosshair and killfeed) |
 | commands | n/a | print all the commands shown above in the console |
 
+
+### note:
+`localplayer` and `block` **do not** work with pov/mirv_pov demos.  you will need to type the commands in the console and replace `Trace` with your XUID, like [this](https://github.com/advancedfx/advancedfx/wiki/Source%3Amirv_deathmsg#how-to-block-everything-except-a-specific-player).
+
 ## customizing blur/video settings
 | line | command | default value | description |
 | --- | --- | --- | --- |
@@ -52,10 +56,10 @@ these commands are already in the cfg file but are disabled by default, to enabl
 | line | command(s) | description |
 | --- | --- | --- |
 | 35 | demo_index 1 | makes navigation inside of demos less laggy, disabled by default because it can sometimes cause bugs |
-| 37 | mp_display_kill_assists 0 | removes assists from killfeed (needs to be executed every time a demo is opened) |
+| 37 | mp_display_kill_assists 0 | removes assists from killfeed |
 | 39 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
 | 41 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and blind icons from the killfeed |
-| 43 | mirv_streams record name " " | custom recording path |
+| 43 | mirv_streams record name "[path]" | custom recording path |
 | 45 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
 
 # troubleshooting
