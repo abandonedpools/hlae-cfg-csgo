@@ -20,16 +20,16 @@ you should execute the config every time you launch a demo or else some commands
 
 by default the recordings will be saved in a folder named "untitled_rec" in your Counter-Strike Global Offensive folder.
 
-if you do not see an mp4 file or encounter other issues please refer to the [bottom of this page](#no-video-file).
+if you do not see an mp4 file or encounter other issues please refer to the [bottom of this page](#troubleshooting).
 
 ## simple command shortcuts
 aliases you can type in console to quickly execute/toggle commands.
 
 | alias | command(s) | description |
 | --- | --- | --- |
-| localplayer | mirv_deathmsg localplayer xTrace | highlight kills of the player currently being spectated. **(may not work with pov demos)** |
-| block | mirv_deathmsg filter add attackerMatch=!xTrace victimMatch=!xTrace block=1 lastRule=1 | block kills that are not from the player you are currently spectating **(may not work with pov demos)** |
-| lifetime | mirv_deathmsg lifetimeMod 10 | make highlighted kills last longer in the killfeed |
+| localplayer | mirv_deathmsg localplayer xTrace | (toggle) highlight kills of the player currently being spectated. **(may not work with pov demos)** |
+| block | mirv_deathmsg filter add attackerMatch=!xTrace victimMatch=!xTrace block=1 lastRule=1 | (toggle) block kills that are not from the player you are currently spectating **(may not work with pov demos)** |
+| lifetime | mirv_deathmsg lifetimeMod 10 | (toggle) make highlighted kills last longer in the killfeed |
 | clearmsg | mirv_deathmsg filter clear; mirv_deathmsg lifetimeMod default; mirv_deathmsg localplayer default | clear all the killfeed filters (last 3 commands) |
 | id | mirv_listentities isplayer=1 | show player XUID's in console |
 | noflash | mat_suppress effects/flashbang.vmt; mat_suppress effects/flashbang_white.vmt | disable flashbangs |
@@ -40,27 +40,28 @@ aliases you can type in console to quickly execute/toggle commands.
 
 
 ### note:
-`localplayer` and `block` **do not** work with pov/mirv_pov demos.  you will need to type the commands in the console and replace `Trace` with your XUID, like [this](https://github.com/advancedfx/advancedfx/wiki/Source%3Amirv_deathmsg#how-to-block-everything-except-a-specific-player).
+`localplayer` and `block` **do not** work with mirv_pov/pov demos.  you will need to type the commands in the console and replace `Trace` with your XUID, like [this](https://github.com/advancedfx/advancedfx/wiki/Source%3Amirv_deathmsg#how-to-block-everything-except-a-specific-player).
 
 ## customizing blur/video settings
 | line | command | default value | description |
 | --- | --- | --- | --- |
-| 7 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
-| 23 | -crf | 1 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
-| 28 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate edits |
-| 29 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has. (e.g. 60 fps 1 exposure = 120 fps 2 exposure = 240 fps 4 exposure... etc.) |
+| 9 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
+| 25 | -crf | 1 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
+| 30 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate edits |
+| 31 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has. (e.g. 60 fps 1 exposure = 120 fps 2 exposure = 240 fps 4 exposure... etc.) |
 
 ## optional commands
 these commands are already in the cfg file but are disabled by default, to enable them remove the "// " in front of them.
 
 | line | command(s) | description |
 | --- | --- | --- |
-| 35 | demo_index 1 | makes navigation inside of demos less laggy, disabled by default because it can sometimes cause bugs |
-| 37 | mp_display_kill_assists 0 | removes assists from killfeed |
-| 39 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
-| 41 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and blind icons from the killfeed |
-| 43 | mirv_streams record name "[path]" | custom recording path |
-| 45 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
+| 37 | demo_index 1 | makes navigation inside of demos less laggy, disabled by default because it can sometimes cause bugs |
+| 39 | mp_display_kill_assists 0 | removes assists from killfeed |
+| 41 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
+| 43 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and blind icons from the killfeed |
+| 45 | cl_show_observer_crosshair 0 | disable observer crosshair |
+| 49 | mirv_streams record name "[path]" | custom recording path |
+| 51 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
 
 # troubleshooting
 ## no video file
