@@ -60,8 +60,8 @@ these commands are already in the cfg file but are disabled by default, to enabl
 | 41 | mirv_streams record voices 1;snd_setmixer voip vol 0 | record in-game voice chat in separate audio files (doesn't work with pre-2015 voice codec) |
 | 43 | mirv_deathmsg filter add noscope=0 thrusmoke=0 attackerblind=0 | remove smoke, noscope and blind icons from the killfeed |
 | 45 | cl_show_observer_crosshair 0 | disable observer crosshair |
-| 49 | mirv_streams record name "[path]" | custom recording path |
-| 51 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
+| 47 | mirv_streams record name "[path]" | custom recording path |
+| 49 | mat_postprocess_enable 0; mat_colorcorrection 0; mat_disable_bloom 1 | disable post processing effects |
 
 # troubleshooting
 ## no video file
