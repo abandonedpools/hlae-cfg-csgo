@@ -1,10 +1,12 @@
 # overview
-this is my config for recording csgo demos with HLAE. it is made to be quick and easy to use, with plenty of customization options.
+this is my config for recording csgo demos with HLAE. it is made to be quick and easy to use, with plenty of customization options. it records at a high framerate and interpolates the frames to create a motion blur effect (similar to sony vegas resample or after effects frame blending).
+
+the "raw" version of the cfg is functionally the same but doesn't apply motion blur to the rendered clips.
 
 # requirements
 - [HLAE (with FFMPEG)](https://github.com/advancedfx/advancedfx/releases)
 
-use the installer and tick the checkbox that says "reinstall FFMPEG"
+ ***use the installer and tick the checkbox that says "reinstall FFMPEG"**
 
 # how to use
 ## basic instructions
@@ -16,7 +18,7 @@ use the installer and tick the checkbox that says "reinstall FFMPEG"
 3. go to the round/tick you want to record and press <kbd>o</kbd> on your keyboard to start recording (you can change this bind in the cfg file)
 4. once you are done, press <kbd>o</kbd> again to stop recording
 
-you should execute the config every time you launch a demo or else some commands will not be executed properly (delag and such)
+you should execute the config every time you launch a demo or else some commands will not be executed properly. (delag and such)
 
 by default the recordings will be saved in a folder named "untitled_rec" in your Counter-Strike Global Offensive folder.
 
@@ -45,10 +47,13 @@ aliases you can type in console to quickly execute/toggle commands.
 ## customizing blur/video settings
 | line | command | default value | description |
 | --- | --- | --- | --- |
-| 9 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
-| 25 | -crf | 1 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
-| 30 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate edits |
+| 10 | host_framerate | 1080 | this is how many frames per second the game will run at during recording, higher will make the blur look smoother and **will not** make the file size bigger, but it will take longer. 900 and up should look good |
+| 25 | -crf | 9 | video quality ([what is crf?](https://trac.ffmpeg.org/wiki/Encode/H.264#crf)) |
+| 30 | mirv_streams settings edit blur exposure | 0.65 | this is how much blur the recording will have, this setting is good if you render your final video at 24-30 fps but you might want more blur for lower framerate fragmovies |
 | 31 | mirv_streams settings edit blur fps | 60 | this is the fps that your recording will be. 60 is good enough for most fragmovies if you render at 30fps but you can make it higher if you need to. this setting will also affect how much blur your video has. (e.g. 60 fps 1 exposure = 120 fps 2 exposure = 240 fps 4 exposure... etc.) |
+
+### note:
+the last two settings do not appear in the "raw" version of the cfg since it does not have a sampler, the output fps is instead determined by the `host_framerate` value which is defaulted to 60. note that higher framerates may require you to adjust the bitrate (crf value), leading to larger files.
 
 ## optional commands
 these commands are already in the cfg file but are disabled by default, to enable them remove the "// " in front of them.
