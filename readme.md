@@ -30,7 +30,7 @@ Aliases you can type in console to quickly execute/toggle commands.
 | Alias | Command(s) | Description |
 | --- | --- | --- |
 | localplayer | mirv_deathmsg localplayer xTrace | (toggle) Highlight kills of the player currently being spectated. **(does not work with pov demos)** |
-| block | mirv_deathmsg filter add attackerMatch=!xTrace victimMatch=!xTrace block=1 lastRule=1 | (toggle) Block kills that are not from the player you are currently spectating **(may not work with pov demos)** |
+| block | mirv_deathmsg filter add attackerMatch=!xTrace victimMatch=!xTrace block=1 lastRule=1 | (toggle) Block kills that are not from the player you are currently spectating **(does not work with pov demos)** |
 | lifetime | mirv_deathmsg lifetimeMod 10 | (toggle) Make highlighted kills last longer in the killfeed |
 | clearmsg | mirv_deathmsg filter clear; mirv_deathmsg lifetimeMod default; mirv_deathmsg localplayer default | Clear all the killfeed filters (last 3 commands) |
 | id | mirv_listentities isplayer=1 | Show player XUID's in console |
